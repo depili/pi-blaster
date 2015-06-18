@@ -40,20 +40,27 @@ static char VERSION[] = "0.1.1";
 // Created new known_pins with raspberry pi list of pins
 // to compare against the param received.
 static uint8_t known_pins[] = {
-		4,      // P1-7
-		17,     // P1-11
-		18,     // P1-12
-		27,     // P1-13
-		21,     // P1-13
-		22,     // P1-15
-		23,     // P1-16
-		24,     // P1-18
-		25,     // P1-22
+        6,
+        9,
+        10,      // P1-7
+        11,
+        13,
+        14,
+        15,     // P1-11
+        16,     // P1-12
+        17,
+        18,
+        19,     // P1-13
+        20,
+        21,     // P1-13
+        22,     // P1-15
+        26,     // P1-18
+        27     // P1-22
 };
 
 // pin2gpio array is not setup as empty to avoid locking all GPIO
 // inputs as PWM, they are set on the fly by the pin param passed.
-static uint8_t pin2gpio[8];
+static uint8_t pin2gpio[16];
 
 // Set num of possible PWM channels based on the known pins size.
 #define NUM_CHANNELS    (sizeof(known_pins)/sizeof(known_pins[0]))
